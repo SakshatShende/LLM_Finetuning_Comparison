@@ -1,17 +1,41 @@
-# LLM_Finetuning_Comparison
- Just experimenting with LLM finetuning using various techniques and benchmarking scores for comparison
-i) Finetuning Base Model - LLama 3.2 3B Instruct
-ii) Model Loading- 
-1) Implemented Flash Attention 2 for reduced training time
-2) Model loaded in 16 bit precision (except in qlora, 4 bit quantization, using double quantization and NormalFloat4)
-iii) Dataset- "gbharti/finance-alpaca"
-iv) Hyperparameters-
-Rank-32, 
-BF16=True, 
-Max Steps = 200
-4) For VB Lora (num_vectors=60,vector_length=256)
-5) For Ada Lora (init_rank=32,target_r=4 )
-v) Hardware - RTX 3090- 24 GB Vram, 4vCPU, 31GB RAM
+#  LLM Finetuning Comparison 
+
+**Just experimenting with LLM finetuning using various techniques and benchmarking scores for comparison.**  
+This project focuses on **efficient LLM finetuning** using **parameter-efficient methods** and compares various **benchmark scores** across multiple approaches.
+
+---
+
+##  Model & Setup
+
+###  Finetuning Base Model
+- **LLama 3.2 3B Instruct** 
+
+###  Model Loading
+- **Implemented Flash Attention 2** for reduced training time 
+- **Model loaded in 16-bit precision** (except in QLoRA, which uses **4-bit quantization** with **Double Quantization & NormalFloat4**) 
+
+###  Dataset
+- **Dataset Used**: ["gbharti/finance-alpaca"](https://huggingface.co/datasets/gbharti/finance-alpaca) 
+(A financial domain instruction-tuning dataset)
+
+---
+
+##  Hyperparameters
+| Parameter       | Value |
+|----------------|-------|
+| **Rank**       | 32    |
+| **BF16**       | True  |
+| **Max Steps**  | 200   |
+
+- **For VB LoRA** → `num_vectors=60`, `vector_length=256`
+- **For Ada LoRA** → `init_rank=32`, `target_r=4`
+
+---
+
+##  Hardware Used
+- **GPU**: NVIDIA RTX **3090** (24GB VRAM) 
+- **CPU**: **4 vCPUs**
+- **RAM**: **31GB**
 
 ## Fine-Tuning Benchmark Results
 Test Set - Questions not seen during training
