@@ -6,9 +6,9 @@ ii) Model Loading-
 2) Model loaded in 16 bit precision (except in qlora, 4 bit quantization, using double quantization and NormalFloat4)
 iii) Dataset- "gbharti/finance-alpaca"
 iv) Hyperparameters-
-1)Rank-32
-2)BF16=True
-3)Max Steps = 200
+Rank-32, 
+BF16=True, 
+Max Steps = 200
 4) For VB Lora (num_vectors=60,vector_length=256)
 5) For Ada Lora (init_rank=32,target_r=4 )
 v) Hardware - RTX 3090- 24 GB Vram, 4vCPU, 31GB RAM
